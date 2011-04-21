@@ -5,7 +5,7 @@
 # trek.R - Demonstrates basic R features with a Star Trek themed example.
 #
 # Remember, ? is your best friend.
-# ?<command> fetched the help for <command>
+# ?<command> fetches the help for <command>
 # ??<string> searches for help appropriate to <string>
 
 library(ggplot2)
@@ -21,16 +21,16 @@ trek.movies <- movies[grep('star trek', movies$title, ig=T),]
 
 # Sorts the new frame by the year of the movie, ascending.
 trek.movies <- trek.movies[with(trek.movies, order(year)),]
-head(trek.movies)  # First 10 lines of trek.movies
+head(trek.movies, 10)  # First 10 lines of trek.movies
 
 # This will actually get the odd numbered Trek Films.
 # Remember: R is 1 indexed, not 0 indexed.
 # c is a function to concatenate values into a vector. ?c for details.
-even.ones <- c(1,3,5,7,9)
+even.ones <- c(1,3,5,7,9,11)
 trek.movies[even.ones,]  # The wrong ones...
 
 # This uses R's implicit repetition to add one to all value in good.ones
-even.ones <- c(1,3,5,7,9) + 1
+even.ones <- even.ones + 1
 even.ones
 trek.movies[even.ones,]  # Now we're talking.
 
@@ -99,3 +99,4 @@ hist(odd.votes)
 
 # The test still comes out the same, though the difference is a bit less.
 t.test(even.votes, odd.votes)
+
